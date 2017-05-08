@@ -1,24 +1,49 @@
 <div class="container">
   <div class="sign_up_div">
     <h2 class="text-center">Sign Up</h2>
-    <form class="sign_up_form">
+    <form name="SignUpForm" class="sign_up_form" novalidate>
       <label class="sign_up_label">First Name</label>
-      <input type="text" class="sign_up_input"/>
+      <input type="text" class="sign_up_input" name="firstname" placeholder="FirstName"
+          required ng-minlength="4" ng-maxlength="10">
+      <span
+        ng-if="(SignUpForm.firstname.$error.minlength || SignUpForm.firstname.$error.required) && SignUpForm.firstname.$touched">
+        FirstName must be at least 4 characters long
+      </span>
+      <span ng-if="SignUpForm.firstname.$error.maxlength && SignUpForm.firstname.$touched">
+        FirstName must not be longer than 10 characters
+      </span>
       </br>
       <label class="sign_up_label">Last Name</label>
-      <input type="text" class="sign_up_input"/>
+      <input type="text" class="sign_up_input" name="lastname" placeholder="LastName"
+          required ng-minlength="4" ng-maxlength="10">
+      <span
+        ng-if="(SignUpForm.lastname.$error.minlength || SignUpForm.lastname.$error.required) && SignUpForm.lastname.$touched">
+        LastName must be at least 4 characters long
+      </span>
+      <span ng-if="SignUpForm.lastname.$error.maxlength && SignUpForm.lastname.$touched">
+        LastName must not be longer than 10 characters
+      </span>
       </br>
       <label class="sign_up_label">Email</label>
-      <input type="text" class="sign_up_input"/>
+      <input type="text" class="sign_up_input" name="email" placeholder="Email"
+          required>
+      <span ng-if="SignUpForm.email.$invalid && SignUpForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
       </br>
       <label class="sign_up_label">Phone No.</label>
-      <input type="text" class="sign_up_input"/>
+      <input type="text" class="sign_up_input" name="phone" placeholder="Phone ###-###-####"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="SignUpForm.phone.$invalid && SignUpForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
       </br>
       <label class="sign_up_label">Menu Code</label>
-      <input type="text" class="sign_up_input"/>
+      <input type="text" class="sign_up_input" placeholder="MenuCode"
+             required>
       </br>
       </br>
-      <button class="sign_up_input submit_button">Submit</button>
+      <button class="sign_up_input submit_button" ng-disabled="SignUpForm.$invalid">Submit</button>
     </form>
   </div>
 </div>
