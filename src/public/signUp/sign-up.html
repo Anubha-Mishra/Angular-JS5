@@ -48,11 +48,15 @@
       </br>
       <label class="sign_up_label">Menu Code</label>
       <input type="text" class="sign_up_input" placeholder="MenuCode" name="menucode"
-             ng-model="signUp.user.menucode"
-             required>
+             ng-model="signUp.user.favorite.short_name"
+             required
+             ng-disabled="signUp.signedup">
+      <span ng-if="signUp.error.msg && !(SignUpForm.menucode.$error.required && SignUpForm.lastName.$touched)">
+        {{ signUp.error.msg }}
+      </span>
       </br>
       </br>
-      <button class="sign_up_input submit_button"
+      <button ng-if="!signUp.signedup" class="sign_up_input submit_button"
               ng-disabled="SignUpForm.$invalid"
               ng-click="signUp.submit()">Submit</button>
     </form>
