@@ -184,23 +184,23 @@ h3.menu-item-title {
   }
 }
 .sign_up_div {
-  width: 350px;
-  float: right;
+  padding: 0px 20px;
 }
-.sign_up_form {
+.sign_up_form, .sign_up_div h2 {
   padding: 20px;
 }
 .sign_up_label {
-  display: block;
+  width: 100px;
 }
 .sign_up_input {
-  width: 100%;
+  width: 350px;
   padding: 5px;
   border-radius: 5px;
   color: #000000;
   margin-bottom: 10px;
 }
 .submit_button {
+  width: 100px;
   background-color: #f6b319;
   font-weight: bold
 }
