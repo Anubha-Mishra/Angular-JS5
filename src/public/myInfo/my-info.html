@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="sign_up_div">
+    <h2>My Information</h2>
+    <form ng-if="myInfo.isSignedUp()" name="MyInfoForm" class="sign_up_form" novalidate>
+      <label class="sign_up_label">First Name</label>
+      <span>{{myInfo.myInformation.firstname}}</span>
+      </br>
+      <label class="sign_up_label">Last Name</label>
+      <span>{{myInfo.myInformation.lastname}}</span>
+      </br>
+      <label class="sign_up_label">Email</label>
+      <span>{{myInfo.myInformation.email}}</span>
+      </br>
+      <label class="sign_up_label">Phone No.</label>
+      <span>{{myInfo.myInformation.phone}}</span>
+      </br>
+      <label class="sign_up_label">Menu Code</label>
+      <span>{{myInfo.myInformation.menucode.short_name}}</span>
+    </form>
+    <div ng-if="!myInfo.isSignedUp()">Not signed up yet.
+      <span ui-sref="public.signUp">SignUp Now</span>
+    </div>
+  </div>
+</div>
