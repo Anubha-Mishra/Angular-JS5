@@ -4,15 +4,18 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController);
 
-MyInfoController.$inject = ['signedUp', 'myInformation','MenuService', 'UserService'];
-function MyInfoController(signedUp, myInformation, MenuService, UserService) {
-  var $ctrl = this;
-  $ctrl.myInformation = myInformation;
-  $ctrl.isSignedUp = function() {
-    if ($ctrl.myInformation.firstname) {
+
+MyInfoController.$inject = ['signedup', 'myinfo', 'UserService', 'MenuService'];
+function MyInfoController(signedup, myinfo, UserService, MenuService) {
+  var myInfoCtrl = this;
+  myInfoCtrl.myInfo = myinfo;
+  myInfoCtrl.isSignedup = function(){
+    if (myInfoCtrl.myInfo.firstname) {
       return true;
     }
     return false;
   };
+  var error = {};
 }
+
 })();

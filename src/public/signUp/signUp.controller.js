@@ -4,25 +4,28 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['signedUp', 'MenuService', 'UserService'];
-function SignUpController(signedUp, MenuService, UserService) {
+
+SignUpController.$inject = ['signedup', 'UserService', 'MenuService'];
+function SignUpController(signedup, UserService, MenuService) {
   var $ctrl = this;
   $ctrl.user = {};
   $ctrl.error = {};
-  $ctrl.signedUp = signedUp;
+
+  $ctrl.signedup = signedup;
+
   $ctrl.submit = function() {
-    MenuService.getItems($ctrl.user.menucode.short_name)
-    .then(function(response) {
-      $ctrl.user.menucode = response;
-      $ctrl.signedUp = true;
-      UserService.signUpDetails($ctrl.user);
-      $ctrl.error.message = "Your Information has been saved.";
-    },
-    function(error) {
-      $ctrl.error.message = "No such menu exists.";
+    MenuService.getItem($ctrl.user.menucode.short_name)
+    .then(
+      function (response) {
+        $ctrl.user.menucode = response;
+        UserService.signUp($ctrl.user);
+        $ctrl.signedup = true;
+        $ctrl.error.msg = 'Your information has been saved';
+      },
+      function (error) {
+        $ctrl.error.msg = 'No such menu number exists.';
     });
   };
 }
-
 
 })();

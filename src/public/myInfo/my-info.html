@@ -1,24 +1,22 @@
 <div class="container">
-  <div class="sign_up_div">
-    <h2>My Information</h2>
-    <form ng-if="myInfo.isSignedUp()" name="MyInfoForm" class="sign_up_form" novalidate>
-      <label class="sign_up_label">First Name</label>
-      <span>{{myInfo.myInformation.firstname}}</span>
-      </br>
-      <label class="sign_up_label">Last Name</label>
-      <span>{{myInfo.myInformation.lastname}}</span>
-      </br>
-      <label class="sign_up_label">Email</label>
-      <span>{{myInfo.myInformation.email}}</span>
-      </br>
-      <label class="sign_up_label">Phone No.</label>
-      <span>{{myInfo.myInformation.phone}}</span>
-      </br>
-      <label class="sign_up_label">Menu Code</label>
-      <span>{{myInfo.myInformation.menucode.short_name}}</span>
-    </form>
-    <div ng-if="!myInfo.isSignedUp()">Not signed up yet.
-      <span ui-sref="public.signUp">SignUp Now</span>
-    </div>
+  <h2 class="text-center">My Info</h2>
+  <div ng-if="!myInfoCtrl.isSignedup()" class="text-center">
+    Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
   </div>
+  <form ng-if="myInfoCtrl.isSignedup()" name="MyInfoForm" class="sign_up_form" novalidate>
+    <label class="sign_up_label">First Name</label>
+    <span>{{myInfoCtrl.myInfo.firstname}}</span>
+    </br>
+    <label class="sign_up_label">Last Name</label>
+    <span>{{myInfoCtrl.myInfo.lastname}}</span>
+    </br>
+    <label class="sign_up_label">Email</label>
+    <span>{{myInfoCtrl.myInfo.email}}</span>
+    </br>
+    <label class="sign_up_label">Phone No.</label>
+    <span>{{myInfoCtrl.myInfo.phone}}</span>
+    </br>
+    <label class="sign_up_label">Menu Code</label>
+    <span>{{myInfoCtrl.myInfo.menucode.short_name}}</span>
+  </form>
 </div>
