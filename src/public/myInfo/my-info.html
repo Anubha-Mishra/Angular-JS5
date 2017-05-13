@@ -1,6 +1,6 @@
 <div class="container">
-  <h2 class="text-center">My Info</h2>
-  <div ng-if="!myInfoCtrl.isSignedup()" class="text-center">
+  <h2>My Information</h2>
+  <div ng-if="!myInfoCtrl.isSignedup()">
     Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
   </div>
   <form ng-if="myInfoCtrl.isSignedup()" name="MyInfoForm" class="sign_up_form" novalidate>
@@ -18,6 +18,6 @@
     </br>
     <label class="sign_up_label">Menu Code</label>
     <span>{{myInfoCtrl.myInfo.menucode.short_name}}</span>
-	<img>{{myInfoCtrl.myInfo.menucode.short_name}}</img>
+	<img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.myInfo.menucode.short_name}}.jpg" alt="{{myInfoCtrl.myInfo.menucode.name}}">
   </form>
 </div>
