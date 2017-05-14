@@ -9,7 +9,7 @@ angular.module('common')
     var service = this;
     service.user = {};
 
-    service.signedup = function() {
+    service.signedUp = function() {
 
       if(service.user.firstname) {
         return true;
@@ -19,7 +19,7 @@ angular.module('common')
 
     };
 
-    service.signUp = function(user) {
+    service.signUpDetails = function(user) {
       service.user = user;
     };
 

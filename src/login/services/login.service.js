@@ -1,7 +1,7 @@
 (function() {
 "use strict";
 
-angular.module('admin')
+angular.module('login')
 .service('LoginService', LoginService);
 
 LoginService.$inject = ['$http', 'ApiPath'];

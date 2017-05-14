@@ -18,7 +18,7 @@ function SignUpController(signedup, UserService, MenuService) {
     .then(
       function (response) {
         $ctrl.user.menucode = response;
-        UserService.signUp($ctrl.user);
+        UserService.signUpDetails($ctrl.user);
         $ctrl.signedup = true;
         $ctrl.error.msg = 'Your information has been saved';
       },

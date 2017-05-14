@@ -204,3 +204,12 @@ h3.menu-item-title {
   background-color: #f6b319;
   font-weight: bold
 }
+.menu_code_details {
+	padding-left: 100px;
+}
+.sign_up_form .menu-item-photo {
+	float: left;
+}
+.sign_up_form .menu-item-title {
+	clear: both;
+}

@@ -7,11 +7,11 @@ angular.module('public')
 
 MyInfoController.$inject = ['signedup', 'myinfo', 'UserService', 'MenuService','ApiPath'];
 function MyInfoController(signedup, myinfo, UserService, MenuService, ApiPath) {
-  var myInfoCtrl = this;
-  myInfoCtrl.myInfo = myinfo;
-  myInfoCtrl.basePath = ApiPath;
-  myInfoCtrl.isSignedup = function(){
-    if (myInfoCtrl.myInfo.firstname) {
+  var $ctrl = this;
+  $ctrl.myInfo = myinfo;
+  $ctrl.basePath = ApiPath;
+  $ctrl.isSignedup = function(){
+    if ($ctrl.myInfo.firstname) {
       return true;
     }
     return false;

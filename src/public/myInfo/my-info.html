@@ -1,23 +1,29 @@
 <div class="container">
-  <h2>My Information</h2>
-  <div ng-if="!myInfoCtrl.isSignedup()">
+  <h2 class="sign_up_form">My Information</h2>
+  <div ng-if="!myInformation.isSignedup()" class="sign_up_form">
     Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
   </div>
-  <form ng-if="myInfoCtrl.isSignedup()" name="MyInfoForm" class="sign_up_form" novalidate>
-    <label class="sign_up_label">First Name</label>
-    <span>{{myInfoCtrl.myInfo.firstname}}</span>
+  <form ng-if="myInformation.isSignedup()" name="MyInfoForm" class="sign_up_form" novalidate>
+    <label class="sign_up_label">First Name :</label>
+    <span>{{myInformation.myInfo.firstname}}</span>
     </br>
-    <label class="sign_up_label">Last Name</label>
-    <span>{{myInfoCtrl.myInfo.lastname}}</span>
+    <label class="sign_up_label">Last Name :</label>
+    <span>{{myInformation.myInfo.lastname}}</span>
     </br>
-    <label class="sign_up_label">Email</label>
-    <span>{{myInfoCtrl.myInfo.email}}</span>
+    <label class="sign_up_label">Email :</label>
+    <span>{{myInformation.myInfo.email}}</span>
     </br>
-    <label class="sign_up_label">Phone No.</label>
-    <span>{{myInfoCtrl.myInfo.phone}}</span>
+    <label class="sign_up_label">Phone No. :</label>
+    <span>{{myInformation.myInfo.phone}}</span>
     </br>
-    <label class="sign_up_label">Menu Code</label>
-    <span>{{myInfoCtrl.myInfo.menucode.short_name}}</span>
-	<img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.myInfo.menucode.short_name}}.jpg" alt="{{myInfoCtrl.myInfo.menucode.name}}">
+    <label class="sign_up_label">Menu Code :</label>
+		<div class="menu_code_details">
+			<div class="menu-item-photo">
+				<div>{{myInformation.myInfo.menucode.short_name}}</div>
+				<img class="img-responsive" width="250" height="150" ng-src="{{myInformation.basePath}}/images/{{myInformation.myInfo.menucode.short_name}}.jpg" alt="{{myInformation.myInfo.menucode.name}}">		  
+			</div>
+			<h3 class="menu-item-title">{{myInformation.myInfo.menucode.name}}</h3>
+			<p class="menu-item-details">{{myInformation.myInfo.menucode.description}}</p>
+		</div>
   </form>
 </div>

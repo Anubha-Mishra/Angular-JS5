@@ -48,7 +48,7 @@ function routeConfig ($stateProvider) {
       controllerAs: 'signUp',
       resolve: {
         signedup: ['UserService', function (UserService) {
-          return UserService.signedup();
+          return UserService.signedUp();
         }]
       }
     })
@@ -56,10 +56,10 @@ function routeConfig ($stateProvider) {
       url: '/myInfo',
       templateUrl: 'src/public/myInfo/my-info.html',
       controller: 'MyInfoController',
-      controllerAs: 'myInfoCtrl',
+      controllerAs: 'myInformation',
       resolve: {
         signedup: ['UserService', function (UserService) {
-          return UserService.signedup();
+          return UserService.signedUp();
         }],
         myinfo: ['UserService', function (UserService) {
           return UserService.getUserInfo();
